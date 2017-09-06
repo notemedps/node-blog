@@ -1,6 +1,8 @@
 # node-blog
-Simple Blog created using Nodejs , MongoDB , Bootstrap .  
-Features : 
+ Simple Blog created using Nodejs , MongoDB , Bootstrap .  
+ 
+
+# Features : 
   ADD ADMIN 
   REMOVE ADMIN
   ADMIN LOGIN
@@ -10,18 +12,18 @@ Features :
   REMOVE CATEGORY
   EDIT /MANAGE ALL THINGS THAT GETS DISPLAYED ON SITE
  
-For testing purpose :
+# For testing purpose :
 username : n
 password : n 
   This is a dummy username , you can create real username after logging with this username.
   
   
   
- REQUIREMENTS TO INSTALLED :
+# REQUIREMENTS TO INSTALLED :
  NODEJS and NPM
  MONGODB
 
-clone or download and extract this repo on your project folder and run following commands : 
+# Clone or download and extract this repo on your project folder and run following commands : 
 npm install 
 After that
 node app
