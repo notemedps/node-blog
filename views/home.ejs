@@ -1,0 +1,114 @@
+<% include header %>
+<center>
+<h1> Welcome <%=data.admin%> </h1>
+</center>
+
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card rounded text-white bg-secondary" >
+			  <div class="card-body">
+			    <h4 class="card-title text-center">Total Posts</h4>
+			    <strong class="card-text">
+			    	Your Total Posts : <span class="badge badge-info"><%=data.nump%></span>
+					
+			    	
+
+			    </strong>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card rounded  text-white bg-success" >
+			  <div class="card-body">
+			    <h4 class="card-title text-center">Total Site Views</h4>
+			    <strong class="card-text">
+			    	Total : <span class="badge badge-danger"><strong><%=st.views%></strong>
+			    	
+			    	
+			    	 	
+			    	 </span>
+			    	
+			    </strong>
+			  </div>
+			</div>
+		</div>
+		
+		
+	</div>
+	
+	
+
+	<div class="row">
+		<div class="col-md-6">
+			<a href="/admins">
+				<div class="card rounded text-white bg-primary" >
+				  <div class="card-body">
+				  Manage Admins
+				  </div>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-6">
+			<a href="/manage-posts">
+				<div class="card rounded text-white bg-info" >
+				  <div class="card-body">
+				   Manage Posts
+				  </div>
+				</div>
+			</a>
+		</div>
+	</div>
+	
+
+	<div class="row">
+		<div class="col-md-6">
+			<a href="/add-cat">
+				<div class="card rounded text-white bg-danger" >
+				  <div class="card-body">
+				  Manage Categories
+				  </div>
+				</div>
+			</a>
+		</div>
+		
+
+		<div class="col-md-6">
+			<a href="/manage-site-settings">
+				<div class="card rounded text-white" style="background-color : #447;">
+				  <div class="card-body">
+				   Manage Site Settings
+				  </div>
+				</div>
+			</a>
+		</div>
+		
+	</div>
+	
+	
+	
+
+	
+
+
+
+
+
+	<div class="row">
+		
+		<div class="col-md-6">
+			<a href="/manage-sliders">
+				<div class="card rounded text-white" style="background-color : teal;">
+				  <div class="card-body">
+				   Manage Sliders
+				  </div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+
+</div>
+
+<% include footer %>

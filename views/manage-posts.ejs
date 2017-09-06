@@ -1,0 +1,186 @@
+<% include header %>
+<center>
+	<h1>Manage Posts </h1>
+</center>
+<hr>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">Add a Post</div>
+				<div class="card-body">
+					<form action="/manage-posts" method="post">
+						<label for="title">Title : </label>
+						<input type="text" name="title" id="title" class="form-control" placeholder="Title of Post">
+						<br>
+						<label for="post">Post : </label>
+						<textarea name="post" id="post" cols="5" rows="5" class="form-control" placeholder="Write the full post here"></textarea>
+						<br>
+						<label for="cats">Add to Category : </label>
+						<%
+							if(cats.length>0){
+						%>
+
+						<select name="cats" id="cats" class="form-control" style="width:50%">
+
+
+
+
+
+						<%
+						for(i=0;i<cats.length;i++){
+						%>
+
+						<option value="<%=cats[i].cat %>"><%=cats[i].cat %></option>
+
+						<%
+
+
+
+						}
+							
+
+							}
+							else{
+							%>
+							NO CATEGORIES AVAILABLE !! ADD FROM BELOW 
+							<%
+							}
+						%>
+						
+
+						</select> 
+						<br>
+						<label for="ac">Didn't found a category looking for ? Add that here : </label>
+						<a href="/add-cat" id="ac" class="btn btn-info">Add a Category</a>
+						<br>
+						<input type="submit" value="Add Post" class="btn btn-primary d-block ml-auto">
+						
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">List of Posts</div>
+				<div class="card-body">
+				<%
+					if(post.length>0){
+						for(i=0;i<post.length;i++){
+							%>
+
+							<a href="post/<%=post[i].url%>"><%=post[i].title%></a>
+							<a href="remove/post/<%=post[i].url%>"><i class="fa fa-trash" style="color: red;padding: 15px"></i> </a>
+							<br>
+							 By : <a href="profile/<%=post[i].username%>"><%=post[i].username%></a> in  <a href="cat/<%=post[i].cat%>"><%=post[i].cat%></a>
+							 <br>
+							 <%
+							 var nd = new Date(post[i].time);
+							var y = nd.getFullYear();
+							var m = nd.getMonth()+1;
+							var d = nd.getDate();
+							var f = y+'/'+m+'/'+d
+							var hr = nd.getHours();
+
+							var min = nd.getMinutes();
+							if(min<10){
+							min = '0'+min;
+							}
+
+							if(hr>12){
+								hr = hr-12;
+								hr = hr+ ":" + min  + " PM"
+							}
+							else{
+								hr = hr+ ":" + min  + " AM"
+							
+							}
+							
+
+							
+							 %>
+							 <%=f%> , <%=hr%>
+							<hr  style="width: 100%">
+
+
+
+
+							<%
+						}
+
+					}
+					else{
+					%>
+					No Posts Added Till Now
+					<%
+					}
+
+				%>
+					
+
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- modal to  error -->
+
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Info </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+     
+
+
+  <% 
+
+    if(posts.length>0){
+
+      %>
+     <script>
+      $('#exampleModal').modal('show');
+
+     </script>
+
+       <%
+      for(i=0;i<posts.length;i++){
+
+
+  %>
+  <%= posts[i].msg %>
+    <br>
+    
+    <% 
+    }
+    }
+
+  %>
+
+ </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<% include footer %>

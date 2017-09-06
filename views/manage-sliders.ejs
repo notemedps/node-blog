@@ -1,0 +1,109 @@
+<% include header %>
+<center>
+	<h1>Manage Slider</h1>
+</center>
+<hr>
+<div class="container">
+	<strong>
+		Current Images
+	</strong>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-md-4">
+		Image 1 : 
+			<img src="<%=im.image1%>" alt="Slider Image" height="200" width="200">
+		</div>
+		<div class="col-md-4">
+		Image 2 : 
+			<img src="<%=im.image2%>" alt="Slider Image" height="200" width="200">
+			
+		</div>
+		<div class="col-md-4">
+		Image 3 : 
+			<img src="<%=im.image3%>" alt="Slider Image" height="200" width="200">
+
+			
+		</div>
+	</div>
+
+	<br>
+
+	<form id="upl" enctype="multipart/form-data" action="/manage-sliders" class="form-control" method="post">
+		<br>
+		<label for="what">Which Image to change ?</label>
+		<select name="what" id="what" class="form-control" style="width:50%">
+			<option value="image1">First Image</option>
+			<option value="image2">Second Image</option>
+			<option value="image3">Third Image</option>
+		</select> 
+		<br>
+	    <input type="file" name="fimage" class="form-control" style="width:50%" />
+		<br>
+	    <input type="submit" name="submit" id="submit" value="Change" class="btn btn-danger" />
+	</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- modal for error -->
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Info </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+     
+
+
+  <% 
+
+    if(slider.length>0){
+
+      %>
+     <script>
+      $('#exampleModal').modal('show');
+
+     </script>
+
+       
+      <%=slider %>
+      <%
+    }
+
+  %>
+
+ </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<% include footer %>

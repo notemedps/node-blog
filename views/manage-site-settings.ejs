@@ -1,0 +1,195 @@
+<% include header %>
+<center>
+	<h1>Manage Site Settings</h1>
+</center>
+<br>
+<div class="container">
+  <form method="post" action="/manage-site-settings">
+    <div class="form-group row">
+      <label for="sname" class="col-sm-2 col-form-label">Site Name : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="sname" name="sname" placeholder="Your Site Name" value="<%=data.siteName%>">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="sslogan" class="col-sm-2 col-form-label">Site Slogan : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="sslogan" name="sslogan" placeholder="Your Site Slogan" value="<%=data.siteSlogan%>">
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="about" class="col-sm-2 col-form-label">About You : </label>
+      <div class="col-sm-10">
+        <textarea type="text" class="form-control" id="about" name="about" cols="3" rows="3" placeholder="Something about you"><%=data.about%></textarea>
+      </div>
+    </div>
+	
+
+  <div class="form-group row">
+      <label for="address" class="col-sm-2 col-form-label">Addresss : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="address" name="address" placeholder="Your address" value = '<%=data.address%>' >
+      </div>
+    </div>
+
+
+  <div class="form-group row">
+      <label for="phone" class="col-sm-2 col-form-label">Your Phone Number : </label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="phone" name="phone" placeholder="Your Phone Number " value  = '<%=data.phone%>' >
+      </div>
+    </div>
+
+
+
+    <div class="form-group row">
+      <label for="email" class="col-sm-2 col-form-label">E-mail Address : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="email" name="email" placeholder="Your email" value = '<%=data.email%>' >
+      </div>
+    </div>
+	 
+	 <div class="form-group row">
+      <label for="facebook" class="col-sm-2 col-form-label">Facebook Username Only : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="facebook" id="facebook"  placeholder="Your facebook" value = '<%=data.facebook%>' >
+      </div>
+    </div>
+  
+
+
+  <div class="form-group row">
+      <label for="twitter" class="col-sm-2 col-form-label">Twitter Username Only : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="twitter" id="twitter"  placeholder="Your twitter" value = '<%=data.twitter%>' >
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="linkedin" class="col-sm-2 col-form-label">Linkedin Username Only : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="linkedin" id="linkedin"  placeholder="Your linkedin" value = '<%=data.linkedin%>' >
+      </div>
+    </div>
+
+  
+
+    <div class="form-group row">
+      <label for="fr1" class="col-sm-2 col-form-label">Right Footer first Text : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="fr1" id="fr1"  placeholder="Your text" value = '<%=data.fr1%>' >
+      </div>
+    </div>
+  
+
+    <div class="form-group row">
+      <label for="fr2" class="col-sm-2 col-form-label">Right Footer second Text : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="fr2" id="fr2"  placeholder="Your text" value = '<%=data.fr2%>' >
+      </div>
+    </div>
+
+    
+    <div class="form-group row">
+      <label for="fr3" class="col-sm-2 col-form-label">Right Footer third Text : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="fr3" id="fr3"  placeholder="Your text" value = '<%=data.fr3%>' >
+      </div>
+    </div>
+
+
+
+
+    <div class="form-group row">
+      <label for="fl1" class="col-sm-2 col-form-label">Left Footer first Text : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="fl1" id="fl1"  placeholder="Your text" value = '<%=data.fl1%>' >
+      </div>
+    </div>
+  
+
+    <div class="form-group row">
+      <label for="fl2" class="col-sm-2 col-form-label">Left Footer second Text : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="fl2" id="fl2"  placeholder="Your text" value = '<%=data.fl2%>' >
+      </div>
+    </div>
+
+    
+    <div class="form-group row">
+      <label for="fl3" class="col-sm-2 col-form-label">Left Footer third Text : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="fl3" id="fl3"  placeholder="Your text" value = '<%=data.fl3%>' >
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        	<button type="submit" class="btn btn-primary">Update Settings</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<!-- Ok , here goes the modal for errorss  -->
+
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Info </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+     
+
+  <% 
+    if(uset.length>0){
+
+      %>
+     <script>
+      $('#exampleModal').modal('show');
+
+     </script>
+
+       <%
+      for(i=0;i<uset.length;i++){
+
+
+  %>
+  <%= uset[i].msg %>
+    <br>
+    
+    <% 
+    }
+    }
+
+  %>
+
+ </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<% include footer %>
